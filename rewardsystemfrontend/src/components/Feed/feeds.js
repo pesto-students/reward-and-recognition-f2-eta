@@ -153,7 +153,7 @@ const Feeds = (props) => {
                   </div>
 
                   <div className="buttons">
-                    <button className="likeButton">
+                    <button className="votes">
                       <span className="icon">
                         <ion-icon name="happy"></ion-icon>
                       </span>
@@ -162,7 +162,7 @@ const Feeds = (props) => {
                       </span>
                     </button>
 
-                    <button className="likeButton">
+                    <button className="votes">
                       <span className="icon">
                         <ion-icon name="heart-dislike"></ion-icon>
                       </span>

@@ -7,7 +7,6 @@
     margin-top: 8vh;
    margin: 20,20,20,20;
    text-align: center;
-
    justify-content: center;
    align-items: center;
    display:flex;
@@ -19,8 +18,7 @@
       /* justify-content: space-around; */
   }
   .heading-1{
-    position: absolute;
-   top: 15%;
-   margin: auto;
+  
+  margin-bottom: 50px;
    font-weight: bold;
    }

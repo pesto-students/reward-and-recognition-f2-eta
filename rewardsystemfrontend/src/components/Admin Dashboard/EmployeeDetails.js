@@ -14,25 +14,32 @@ import "react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 import "react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css";
 import cellEditFactory from "react-bootstrap-table2-editor";
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
+import DeletePopup from "./DeletePopup";
+
 
 const EmployeeDetails = () => {
   const history = useHistory();
 
+const [Openpopup, setDeletepopup]=useState(false)
+
   useEffect(() => {
     if (isAuthenticated() && isAuthenticated().designation === "Admin") {
       console.log("I am a Admin");
-      history.push("/EmployeeDetails");
+      history.push("/employeedetails");
     } else {
       history.push("/");
     }
   }, [history]);
+
+  
+
 
   const [empDetails, setEmpDetail] = useState([]);
 
   //declaired Edit Buttons
   const editButton = (cell, row) => {
     if (row.name) {
-      return (
+      return (<>
         <div style={{ justifyContent:"space-around",alignItems: "center"}}>
           <button
            style={{ width: "20%", alignItems: "center", outline:"none", border:"none"}}
@@ -44,13 +51,15 @@ const EmployeeDetails = () => {
             <ion-icon name="create"></ion-icon>
           </button>
          
-          <button  style={{marginLeft:"12px",outline:"none", border:"none"}} className="Delete" onClick={() => DeleteEmployee(row._id)}>
+          <button  style={{marginLeft:"12px",outline:"none", border:"none"}} onClick={() => DeleteEmployee(row._id)} className="Delete" >
           <ion-icon name="trash"></ion-icon>
           </button>
-        
-
-
+  {/* <DeletePopup trigger={Openpopup}>
+<h3>Do you want to delete Employee</h3>
+<button onClick={() => DeleteEmployee(row._id)}>Yes</button>
+</DeletePopup> */}
         </div>
+</>
       );
     }
   };
@@ -172,6 +181,7 @@ const EmployeeDetails = () => {
             }}
           />
         </div>
+        
       </Container>
 
       <div>
@@ -190,6 +200,7 @@ const EmployeeDetails = () => {
           />
         </Container>
       </div>
+
       <br />
     </>
   );

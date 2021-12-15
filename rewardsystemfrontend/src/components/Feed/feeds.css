@@ -1,5 +1,5 @@
 body{
-  background-image: linear-gradient(to bottom right, #acb6e5,#86fde8);
+  background-image: linear-gradient(to bottom right,#3f51b5, #acb6e5,#86fde8);
     background-size:cover;
     background-attachment: fixed;
 }
@@ -60,31 +60,38 @@ body{
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5);
   }
 
-  /* .card:nth-child(2n){
-
-  } */
-  
   
   .buttons{
      margin-bottom: 10px;
   }
 
+  .votes{
+    margin-left: 10px;
+    text-align: center;
+    padding:5px 6px;
+    background-color:#ffffff;
+    
+    /* color: #ffffff; */
+    border-radius: 3px;
+    border:1px solid #ffffff ;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
   .likeButton{
       margin-left: 10px;
       text-align: center;
       padding:5px 6px;
-      background-color:#acb6e5 ;
+      background-color:#3f51b5;
+      color: #ffffff;
       border-radius: 3px;
-      border:1px solid #acb6e5 ;
+      border:1px solid #3f51b5 ;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      
-
   }
-  .likeButton:hover {
-    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
-    background-color:#879bf3 ;
 
+  .likeButton:hover{
+    background-color:#1f3bdb;
   }
+ 
 
   .buttonheading{
       margin-left: 10px;

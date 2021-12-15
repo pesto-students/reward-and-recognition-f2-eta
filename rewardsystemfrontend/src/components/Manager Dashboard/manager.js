@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { isAuthenticated } from '../../Authen'
 import { useHistory } from 'react-router'
 import Feeds from '../Feed/feeds'
+import Footer from '../Footer/Footer';
 
 
 const Manager=() =>{
@@ -12,7 +13,7 @@ const Manager=() =>{
     useEffect(() => {
         if (isAuthenticated() && isAuthenticated().designation === "Manager") {
             console.log("I am a Manager");
-            history.push('/Manager')
+            history.push('/manager')
           } else{
               history.push('/')
           }
@@ -21,6 +22,7 @@ const Manager=() =>{
     return (<>
 <AdminHeader/>
 <Feeds/>
+<Footer />
         </>
     )
 }

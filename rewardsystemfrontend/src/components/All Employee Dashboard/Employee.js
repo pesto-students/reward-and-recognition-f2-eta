@@ -3,6 +3,7 @@ import AdminHeader from '../Header/AdminHeader'
 import { useHistory } from 'react-router';
 import { isAuthenticated } from '../../Authen';
 import Feeds from '../Feed/feeds';
+import Footer from '../Footer/Footer';
 
 
 const Employee = () =>{
@@ -10,7 +11,7 @@ const Employee = () =>{
 
     useEffect(() => {
         if (isAuthenticated() && (isAuthenticated().designation === "Employee" || isAuthenticated().designation === "Team Lead")) {
-            history.push('/Employee')
+            history.push('/employee')
           } else{
               history.push('/')
           }
@@ -20,6 +21,7 @@ const Employee = () =>{
     return (<>
         <AdminHeader/>
         <Feeds/>
+        <Footer />
         </>
     )
 }

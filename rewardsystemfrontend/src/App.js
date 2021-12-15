@@ -14,6 +14,8 @@ import Winners from "./components/winnersList/winners";
 import ManagerEmpDetails from "./components/Manager Dashboard/managerEmpDetails";
 import NominateForm from "./components/Manager Dashboard/NominateForm";
 import WinnerForm from "./components/Admin Dashboard/WinnerForm";
+import ForgotPassword from "./components/Login/forgotpassword";
+import ResetPassword from "./components/Login/resetpassword";
 
 function App() {
   return (
@@ -22,17 +24,19 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/" component={Login} />
-            <Route exact path="/Admin" component={Admin} />
-            <Route path="/Register" component={Register} />
-            <Route path="/Manager" component={Manager} />
-            <Route path="/Employee" component={Employee} />
-            <Route path="/EmployeeDetails" component={EmployeeDetails} />  
+            <Route exact path="/admin" component={Admin} />
+            <Route path="/register" component={Register} />
+            <Route path="/manager" component={Manager} />
+            <Route path="/employee" component={Employee} />
+            <Route path="/employeedetails" component={EmployeeDetails} />  
             <Route path="/edit/:id" component={Edituser} />
             <Route path="/winners" component={Winners} />      
-            <Route path="/ManagersEmpDetails" component={ManagerEmpDetails} /> 
-            <Route path="/WinnerForm/:id" component={WinnerForm} />
-            <Route path="/NominateForm/:id" component={NominateForm} />
-               
+            <Route path="/managersempdetails" component={ManagerEmpDetails} /> 
+            <Route path="/winnerform/:id" component={WinnerForm} />
+            <Route path="/nominateform/:id" component={NominateForm} />
+              <Route path="/forgotpassword" component={ForgotPassword}></Route> 
+            <Route path="/password/reset/:token" component={ResetPassword}></Route>
+            
             <Route component={PageNotFound} />
           </Switch>
         </Router>
